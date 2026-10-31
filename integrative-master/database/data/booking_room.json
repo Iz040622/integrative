@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "booking_id": 1,
+    "room_id": 1,
+    "checkInDate": "2025-08-10",
+    "checkOutDate": "2025-08-15",
+    "pax": 2,
+    "status": "Pending"
+  },
+  {
+    "id": 2,
+    "booking_id": 1,
+    "room_id": 2,
+    "checkInDate": "2025-08-10",
+    "checkOutDate": "2025-08-12",
+    "pax": 1,
+    "status": "Cancelled"
+  },
+  {
+    "id": 3,
+    "booking_id": 2,
+    "room_id": 4,
+    "checkInDate": "2025-08-20",
+    "checkOutDate": "2025-08-22",
+    "pax": 3,
+    "status": "Pending"
+  },
+  {
+    "id": 4,
+    "booking_id": 3,
+    "room_id": 5,
+    "checkInDate": "2025-09-01",
+    "checkOutDate": "2025-09-05",
+    "pax": 2,
+    "status": "Pending"
+  },
+  {
+    "id": 5,
+    "booking_id": 3,
+    "room_id": 6,
+    "checkInDate": "2025-09-01",
+    "checkOutDate": "2025-09-05",
+    "pax": 1,
+    "status": "Cancelled"
+  },
+  {
+    "id": 6,
+    "booking_id": 3,
+    "room_id": 12,
+    "checkInDate": "2025-09-01",
+    "checkOutDate": "2025-09-05",
+    "pax": 1,
+    "status": "Pending"
+  }
+]

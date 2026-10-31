@@ -1,0 +1,259 @@
+/* LEOW SHI HAO 2314003 G3 */
+
+body {
+    background-color: #f4f4f9;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+}
+.payment-container {
+    max-width: 700px;
+    margin: 40px auto;
+    margin-top: 5%;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+.payment-container:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+h2, h4 {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+.timer {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e63946;
+}
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+.progress-step {
+    width: 33.33%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.progress-step-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 8px;
+}
+.progress-step-circle {
+    width: 30px;
+    height: 30px;
+    background: #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+.progress-step.active .progress-step-circle {
+    background: #457b9d;
+}
+.progress-step.completed .progress-step-circle {
+    background: #2a9d8f;
+}
+.progress-bar-bg {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: #e9ecef;
+    z-index: 0;
+}
+.progress-bar {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    height: 6px;
+    background: #457b9d;
+    transition: width 0.5s ease-in-out;
+    border-radius: 3px;
+}
+.checklist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-left: 4px solid #457b9d;
+    background: #f9f9fb;
+    border-radius: 4px;
+}
+.checklist-total {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px;
+    background: #edf6ff;
+    border-radius: 4px;
+    text-align: right;
+}
+.promo-section {
+    margin-bottom: 20px;
+}
+.promo-section input {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+.promo-section .btn-primary {
+    margin-left: 10px;
+}
+.promo-error {
+    color: #e63946;
+    font-size: 0.9rem;
+    display: none;
+}
+.payment-method {
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    background: #fff;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+.payment-method:hover {
+    border-color: #457b9d;
+    background: #f1f5f9;
+}
+.payment-method.active {
+    border-color: #457b9d;
+    background: #edf6ff;
+    font-weight: 500;
+}
+.payment-page {
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9fb;
+    transition: opacity 0.3s ease;
+}
+.form-control, .form-select {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #457b9d;
+    box-shadow: 0 0 6px rgba(69, 123, 157, 0.2);
+}
+.tng-submit, .card-submit{
+    text-align: center;
+}
+.btn-primary {
+    background: #457b9d;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    transition: background 0.3s ease;
+}
+.btn-primary:hover {
+    Bid: #3c6e8a;
+}
+.receipt-section {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+.btn-success {
+    background: #2a9d8f;
+    border: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+.btn-success:hover {
+    background: #25897e;
+}
+
+#card-element {
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+#card-errors {
+    margin-top: 5px;
+    font-size: 0.875rem;
+}
+.payment-method.active {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.payment-method {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#timeoutModal .modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+#timeoutModal .modal-header {
+    background-color: #dc3545;
+    color: white;
+    border-bottom: none;
+    padding: 15px 20px;
+}
+#timeoutModal .modal-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+#timeoutModal .modal-body {
+    padding: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #333;
+    background-color: #f8f9fa;
+}
+#timeoutModal .modal-dialog {
+    max-width: 400px;
+}
+
+/* Success Modal Styling */
+#successModal .modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+#successModal .modal-header {
+    background-color: #28a745;
+    color: white;
+    border-bottom: none;
+    padding: 15px 20px;
+}
+#successModal .modal-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+#successModal .modal-body {
+    padding: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #333;
+    background-color: #f8f9fa;
+}
+#successModal .modal-dialog {
+    max-width: 400px;
+}

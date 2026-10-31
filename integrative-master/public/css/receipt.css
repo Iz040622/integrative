@@ -1,0 +1,25 @@
+.receipt-container {
+    max-width: 600px;
+    margin: 7rem auto;
+    padding: 2rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.receipt-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.receipt-container p {
+    margin: 0.5rem 0;
+}
+@media print {
+    .no-print {
+        display: none;
+    }
+    .receipt-container {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+}

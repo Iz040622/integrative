@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "roomNo": "101",
+    "availability": true,
+    "room_type_id": 1
+  },
+  {
+    "id": 2,
+    "roomNo": "102",
+    "availability": true,
+    "room_type_id": 1
+  },
+  {
+    "id": 3,
+    "roomNo": "201",
+    "availability": false,
+    "room_type_id": 2
+  },
+  {
+    "id": 4,
+    "roomNo": "202",
+    "availability": true,
+    "room_type_id": 2
+  },
+  {
+    "id": 5,
+    "roomNo": "301",
+    "availability": true,
+    "room_type_id": 3
+  },
+  {
+    "id": 6,
+    "roomNo": "302",
+    "availability": true,
+    "room_type_id": 3
+  },
+  {
+    "id": 7,
+    "roomNo": "401",
+    "availability": true,
+    "room_type_id": 4
+  },
+  {
+    "id": 8,
+    "roomNo": "402",
+    "availability": true,
+    "room_type_id": 4
+  },
+  {
+    "id": 9,
+    "roomNo": "501",
+    "availability": true,
+    "room_type_id": 5
+  },
+  {
+    "id": 10,
+    "roomNo": "502",
+    "availability": false,
+    "room_type_id": 5
+  },
+  {
+    "id": 11,
+    "roomNo": "601",
+    "availability": false,
+    "room_type_id": 6
+  },
+  {
+    "id": 12,
+    "roomNo": "602",
+    "availability": true,
+    "room_type_id": 6
+  }
+]

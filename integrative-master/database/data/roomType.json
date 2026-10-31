@@ -1,0 +1,106 @@
+[
+    {
+        "id": 1,
+        "name": "Studio",
+        "description": "Cozy studio room ideal for solo travelers or couples.",
+        "roomAmenities": {
+            "Size": "25sqm/269sqft",
+            "Wifi": "Free Wi-Fi",
+            "Bed": "2 Single Beds",
+            "AC": "Air Conditioning",
+            "TV": "32-inch LED TV",
+            "Kettle": "Electric Kettle",
+            "Shower": "Private Shower"
+        },
+        "paxNo": 2,
+        "price": 280.00,
+        "imageUrl": "/storage/images/studio.png"
+    },
+    {
+        "id": 2,
+        "name": "Executive Studio",
+        "description": "Spacious executive studio with work desk and premium features.",
+        "roomAmenities": {
+            "Size": "30sqm/323sqft",
+            "Wifi": "High-Speed Wi-Fi",
+            "Bed": "1 Double Bed",
+            "Desk": "Work Desk",
+            "TV": "40-inch Smart TV",
+            "AC": "Air Conditioning",
+            "Coffee": "Nespresso Machine",
+            "Shower": "Rain Shower"
+        },
+        "paxNo": 3,
+        "price": 320.00,
+        "imageUrl": "/storage/images/exestudio.png"
+    },
+    {
+        "id": 3,
+        "name": "Stripe Suite",
+        "description": "Luxurious suite with separate living area and panoramic city views.",
+        "roomAmenities": {
+            "Size": "65sqm/700sqft",
+            "Wifi": "Free Wi-Fi",
+            "Bed": "2 Double Beds",
+            "Living area": "Separate Living Room",
+            "Bathtub": "Bathtub with City View",
+            "TV": "50-inch Smart TV",
+            "Minibar": "Fully Stocked Minibar",
+            "Robes": "Bathrobes & Slippers"
+        },
+        "paxNo": 6,
+        "price": 570.00,
+        "imageUrl": "/storage/images/stripessuite.png"
+    },
+    {
+        "id": 4,
+        "name": "Deluxe King",
+        "description": "Elegant room with a king-sized bed and modern amenities.",
+        "roomAmenities": {
+            "Size": "40sqm/431sqft",
+            "Wifi": "Free Wi-Fi",
+            "Bed": "1 King-sized Bed",
+            "TV": "42-inch LED TV",
+            "AC": "Air Conditioning",
+            "Iron": "Iron & Ironing Board",
+            "Shower": "Rain Shower"
+        },
+        "paxNo": 4,
+        "price": 480.00,
+        "imageUrl": "/storage/images/deluxeking.png"
+    },
+    {
+        "id": 5,
+        "name": "Deluxe Twin",
+        "description": "Deluxe room with two single beds, perfect for friends or colleagues.",
+        "roomAmenities": {
+            "Size": "38sqm/409sqft",
+            "Wifi": "Free Wi-Fi",
+            "Bed": "2 Double Beds",
+            "TV": "40-inch LED TV",
+            "AC": "Air Conditioning",
+            "Shower": "Private Bathroom",
+            "Safe": "In-Room Safe"
+        },
+        "paxNo": 5,
+        "price": 500.00,
+        "imageUrl": "/storage/images/deluxetwin.png"
+    },
+    {
+        "id": 6,
+        "name": "Executive Deluxe",
+        "description": "Upgraded deluxe room with premium features and exclusive access.",
+        "roomAmenities": {
+            "Size": "75sqm/807sqft",
+            "Wifi": "High-Speed Wi-Fi",
+            "Bed": "2 King-sized Beds",
+            "Coffee": "Espresso Machine",
+            "TV": "50-inch Smart TV",
+            "Bathtub": "Bathtub",
+            "Access": "Executive Lounge Access"
+        },
+        "paxNo": 8,
+        "price": 650.00,
+        "imageUrl": "/storage/images/exedeluxeroom.png"
+    }
+]

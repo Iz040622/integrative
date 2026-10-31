@@ -1,0 +1,358 @@
+/* Chin Jia Jun */
+
+#bookingscene {
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 100%;
+    aspect-ratio: 16 / 6;
+    object-fit: cover;
+}
+
+#bookingform {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: rgb(240, 239, 239);
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+
+#bookingform::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#bookingform>div {
+    float: left;
+}
+
+.booking-input {
+    float: left;
+    width: 32%;
+    position: relative;
+    margin-left: 5%;
+}
+
+.booking-input::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 0;
+    border-right: 2px dashed gray;
+}
+
+.booking-input p {
+    font-size: 15px;
+    color: gray;
+}
+
+.booking-input input {
+    font-size: 16px;
+}
+
+#dates {
+    width: 80%;
+}
+
+.pax {
+    float: left;
+    margin-top: 0;
+}
+
+.pax label {
+    font-size: 16px;
+    color: gray;
+    font-weight: bold;
+}
+
+.pax button {
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.pax button:hover {
+    font-weight: bold;
+}
+
+.pax input {
+    text-align: center;
+}
+
+#submitbtn {
+    width: 20%;
+}
+
+#submitbtn button {
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-color: white;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+#submitbtn button:hover {
+    border: none;
+    background-color: gray;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.8);
+}
+
+#no-room-msg {
+    width: 82%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 90px auto;
+    background-color: rgb(240, 239, 239);
+    box-shadow: 0px 4px 8px 0px rgba(94, 93, 93, 0.8);
+    border-radius: 10px;
+    display: none;
+}
+
+#no-room-msg h2 {
+    margin: auto;
+    width: fit-content;
+}
+
+#room-list {
+    width: 82%;
+    margin: auto;
+}
+
+.room {
+    background-color: rgb(240, 239, 239);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.room img {
+    display: block;
+    float: left;
+    width: 523px;
+    height: 330px;
+}
+
+.room-desc {
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin-left: 5%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.room-desc h2 {
+    margin-bottom: 50px;
+    float: left;
+}
+
+.room-desc h3 {
+    float: right;
+    margin-right: 15px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#price {
+    font-weight: bold;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.room-desc table {
+    width: 100%;
+    margin-bottom: 80px;
+    clear: both;
+}
+
+.room-desc td {
+    width: 30%;
+}
+
+.desc-label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.desc-detail {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.desc-detail td {
+    padding-top: 13px;
+}
+
+.room-desc button {
+    position: absolute;
+}
+
+.details-link {
+    font-size: 18px;
+    color: darkblue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.details-link:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.room-desc button {
+    right: 30px;
+    font-size: 20px;
+    padding: 5px 15px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.room-desc button:hover {
+    background-color: gray;
+    color: white;
+    border: 1px solid black;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.room::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#room-detail-modal {
+    display: none;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#room-detail-modal>div {
+    position: relative;
+    width: 64%;
+    height: fit-content;
+    padding: 30px 20px;
+    top: 80px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#close-detail {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#close-detail:hover {
+    transform: scale(1.2);
+    transition: transform 0.1s ease-in-out;
+}
+
+#detail-img {
+    width: 900px;
+    height: 500px;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 30px;
+    display: block;
+}
+
+#room-detail-modal table {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#room-detail-modal h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+#room-detail-modal h2 {
+    text-align: right;
+    font-size: 19px;
+    font-weight: normal;
+    margin: 0;
+}
+
+#room-detail-desc {
+    width: 85%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+#detail-amenities {
+    position: relative;
+}
+
+#detail-amenities span {
+    position: absolute;
+    height: 90%;
+    right: 52%;
+    top: 10px;
+    bottom: 10px;
+    border-right: rgba(128, 128, 128, 0.6) solid 1px;
+}
+
+#detail-amenities table {
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.detail-amenities-label {
+    width: 15%;
+    font-weight: bold;
+}
+
+#detail-amenities td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+#room-detail-modal button {
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    padding: 5px 15px;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border-color: ghostwhite;
+    cursor: pointer;
+}
+
+#room-detail-modal button:hover {
+    background-color: gray;
+    color: rgb(249, 249, 249);
+    border: 1px solid black;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}

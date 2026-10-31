@@ -1,0 +1,135 @@
+/* Chin Jia Jun */
+
+#booking-list-container {
+    width: 85%;
+    margin: 80px auto 50px auto;
+}
+
+#empty-booking-message {
+    margin: 8em auto 4em auto;
+    padding: 25px;
+    width: 70%;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(240, 239, 239);
+    border-radius: 15px;
+}
+
+#empty-booking-message p {
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 40px;
+    color: black;
+}
+
+#empty-booking-message a {
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#empty-booking-message a:hover {
+    background-color: gray;
+    color: black;
+    transform: scale(1.05);
+}
+
+#empty-booking-message a {
+    transition: all 0.3s ease;
+}
+
+.booking-card {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 30px 50px 10px 50px;
+    width: 85%;
+}
+
+.booking-card h2 {
+    margin: 0;
+}
+
+.booking-room {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.booking-room img {
+    display: block;
+    float: left;
+    width: 262px;
+    height: 165px;
+    margin-right: 20px;
+}
+
+.booking-room table {
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+.booking-room table td {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.booking-room table td:not(:first-child) {
+    width: 30%;
+}
+
+.room-name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.completed {
+    color: green;
+    font-weight: bold;
+}
+
+.cancelled {
+    color: red;
+    font-weight: bold;
+}
+
+.cancel-btn {
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 60px;
+    transition: color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: darkred;
+}
+
+.booking-card::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.booking-room::after {
+    content: "";
+    display: table;
+    clear: both;
+}

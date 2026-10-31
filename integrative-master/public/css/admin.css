@@ -1,0 +1,1082 @@
+/* === GENERAL STYLES === */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    overflow-x: hidden;
+}
+
+.layout-wrapper {
+    display: flex;
+    transition: all 0.3s ease;
+    width: 100%;
+    position: relative;
+}
+
+/* When sidebar is open, shift main-content left */
+.layout-wrapper.sidebar-open .main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+}
+
+.main-content {
+    flex: 1;
+    padding: 50px;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* === SIDEBAR ON RIGHT === */
+.sidebar {
+    position: fixed;
+    top: 50px;
+    left: -220px;
+    width: 220px;
+    height: 100vh;
+    /* background-color: #2c3e50; */
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+    color: white;
+}
+
+/* === TOP NAV BAR === */
+.top-nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+}
+
+.logout-btn {
+    color: #2c3e50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: auto;
+    margin-top: 10px;
+    font-size: 24px;
+    padding: 10px 15px;
+}
+
+.logout-btn:hover {
+    color: white;
+    background-color: #2c3e50;
+}
+
+.menu-btn {
+    background: #2c3e50;
+    position: fixed;
+    left: 10px;
+    z-index: 1001;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* === SECTIONS === */
+.section {
+    display: none;
+}
+.section.active {
+    display: block;
+}
+
+#dashboard h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* === TABLE STYLING === */
+.selector-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.report-table {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.report-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-size: 14px;
+}
+
+.report-table thead {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.report-table th,
+.report-table td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.report-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.report-table tbody tr:hover td {
+    background-color: #eef5fa;
+    transition: background-color 0.3s ease;
+}
+
+.report-table td:nth-child(2) {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.sales-section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.chart-container canvas {
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.layout-wrapper.sidebar-open .chart-container canvas {
+    max-width: 700px;
+}
+
+/* === ROOM SECTION === */
+.room-section-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.room-form.card,
+.room-table-wrapper.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.room-form h3,
+.room-table-wrapper h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.room-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.room-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.room-form input,
+.room-form select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.room-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.room-table th,
+.room-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.room-table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.room-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* === CUSTOM PAGINATION === */
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.custom-pagination ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+
+.custom-pagination li {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+
+.custom-pagination li a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+}
+
+.custom-pagination li:hover {
+    background-color: #f0f0f0;
+}
+
+.custom-pagination li.active {
+    background-color: #2c3e50;
+    color: #fff;
+    border-color: #2c3e50;
+}
+
+.custom-pagination li.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Pop-up jump form */
+.custom-pagination .ellipsis {
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+.custom-pagination .jump-form {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    flex-direction: row;
+    gap: 5px;
+    background: #fff;
+    border: 1px solid #2c3e50;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    font-size: 14px;
+}
+
+.custom-pagination .jump-form.show {
+    display: flex;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.custom-pagination .jump-form input {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #2c3e50;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.custom-pagination .jump-form button {
+    padding: 5px 10px;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.custom-pagination .jump-form button:hover {
+    background-color: #1e2b38;
+}
+
+/* === EDIT ROOM MODAL === */
+#editRoomModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.3s ease;
+}
+
+#editRoomModal.show {
+    display: flex;
+}
+
+#editRoomModal .modal-content {
+    background: #fff;
+    padding: 24px 28px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    animation: slideDown 0.3s ease;
+    position: relative;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#editRoomModal h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+#editRoomModal .form-group {
+    margin-bottom: 16px;
+}
+
+#editRoomModal .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+#editRoomModal .form-group input,
+#editRoomModal .form-group select,
+#editRoomModal .form-group textarea {
+    width: 95%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #f9fafb;
+    transition: all 0.2s ease;
+}
+
+#editRoomModal .form-group input:focus,
+#editRoomModal .form-group select:focus,
+#editRoomModal .form-group textarea:focus {
+    border-color: #2c3e50;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+#editRoomModal button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #2c3e50;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+#editRoomModal button[type="submit"]:hover {
+    background: #1e2b38;
+}
+
+/* === ROOM TYPE SECTION === */
+.room-type-section-wrapper {
+    margin-top: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+
+.room-type-section-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Create Room Type Form */
+.room-type-section-wrapper .room-form {
+    margin-bottom: 30px;
+    background: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 6px solid #2c3e50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.room-type-section-wrapper .room-form .form-group {
+    margin-bottom: 15px;
+}
+
+.room-type-section-wrapper .room-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.room-type-section-wrapper .room-form input,
+.room-type-section-wrapper .room-form textarea,
+.room-type-section-wrapper .room-form select {
+    width: 90%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.room-type-section-wrapper .room-form input:focus,
+.room-type-section-wrapper .room-form textarea:focus,
+.room-type-section-wrapper .room-form select:focus {
+    border-color: #2c3e50;
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2);
+    outline: none;
+}
+
+.room-type-section-wrapper .btn-primary {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.room-type-section-wrapper .btn-primary:hover {
+    background-color: #1e2b38;
+}
+
+/* Room Type Table */
+.room-type-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.room-type-table th,
+.room-type-table td {
+    padding: 12px 14px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.room-type-table th {
+    background: #2c3e50;
+    color: #fff;
+    font-weight: bold;
+}
+
+.room-type-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.room-type-table tbody tr:hover td {
+    background: #eef5fa;
+    cursor: pointer;
+}
+
+/* Room Type Images */
+.room-type-table img {
+    border-radius: 8px;
+    max-width: 60px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* === EDIT ROOM TYPE MODAL === */
+#editRoomTypeModal .modal-content {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 14px;
+    max-width: 700px;
+    margin: 5% auto;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    height: auto;
+    min-height: 100vh;
+    max-height: 110vh;
+}
+
+#editRoomTypeModal h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 22px;
+}
+
+#editRoomTypeModal .form-group {
+    margin-bottom: 16px;
+}
+
+#editRoomTypeModal .form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+#editRoomTypeModal input,
+#editRoomTypeModal textarea,
+#editRoomTypeModal select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#editRoomTypeModal button[type="submit"] {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#editRoomTypeModal button[type="submit"]:hover {
+    background-color: #1e2b38;
+}
+
+/* === PROMO CODE SECTION === */
+#promocode.section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.promo-form {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px 30px;
+    background: linear-gradient(to right, #ffffff, #f7f9fc);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid #2c3e50;
+}
+
+.promo-form h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.promo-form .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.promo-form .form-group label {
+    width: 150px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.promo-form .form-group input,
+.promo-form .form-group textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.promo-form .form-group textarea {
+    resize: none;
+    overflow: hidden;
+    line-height: 1.5;
+    min-height: 80px;
+}
+
+.promo-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.promo-form button:hover {
+    background-color: #1e2b38;
+}
+
+/* === MESSAGES === */
+.success-message {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    background: #ffe5e5;
+    border: 1px solid red;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+/* === TABLE WRAPPER === */
+.promo-table-wrapper {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.promo-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    font-size: 14px;
+}
+
+.promo-table thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.promo-table th,
+.promo-table td {
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.promo-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.promo-table tbody tr:hover td {
+    background-color: #eef5fa;
+}
+
+/* === MODAL === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content .close-btn {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* === MANAGE ADMIN SECTION === */
+#crud-admin.section.active {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* === MANAGE ADMIN SECTION === */
+#crud-admin.section.active {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Admin Form (Create) */
+.admin-form {
+    background: #fefefe;
+    border-left: 6px solid #2c3e50;
+    border-radius: 14px;
+    padding: 30px 40px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    margin: 10px auto;
+    max-width: 1000px; /* larger form */
+}
+
+.admin-form h2 {
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #2c3e50;
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+}
+
+/* Grid layout for compact alignment */
+.admin-form .form-group {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.admin-form label {
+    font-weight: 600;
+    color: #333;
+    text-align: right;
+    font-size: 15px;
+}
+
+.admin-form input,
+.admin-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* Radio buttons styled */
+.admin-form .radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-form .radio-group input[type="radio"] {
+    display: none;
+}
+
+.admin-form .radio-group label {
+    background: #f5f5f5;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.admin-form .radio-group input[type="radio"]:checked + label {
+    background: #2c3e50;
+    color: #fff;
+    border-color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Submit button */
+.admin-form button {
+    width: 100%;
+    padding: 14px;
+    background: #2c3e50;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.admin-form button:hover {
+    background: #1e2b38;
+}
+
+/* === ADMIN TABLE === */
+.admin-table-wrapper h3 {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-size: 14px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.admin-table th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: bold;
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-table tbody tr:hover td {
+    background-color: #eef5fa;
+    transition: background-color 0.3s ease;
+}
+
+/* === ADMIN MODAL (Edit) === */
+#editAdminModal .modal-content {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 14px;
+    max-width: 1000px;
+    margin: 5% auto;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+#editAdminModal h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 22px;
+}
+
+#editAdminModal .form-group {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+#editAdminModal label {
+    font-weight: 600;
+    color: #333;
+    text-align: right;
+    font-size: 15px;
+}
+
+#editAdminModal input,
+#editAdminModal select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* Radio buttons inline and styled */
+.admin-form .radio-group,
+#editAdminModal .radio-group {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+}
+
+.admin-form .radio-group input[type="radio"],
+#editAdminModal .radio-group input[type="radio"] {
+    display: none;
+}
+
+.admin-form .radio-group label,
+#editAdminModal .radio-group label {
+    background: #f5f5f5;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.admin-form .radio-group input[type="radio"]:checked + label,
+#editAdminModal .radio-group input[type="radio"]:checked + label {
+    background: #2c3e50;
+    color: #fff;
+    border-color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Buttons */
+#editAdminModal button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#editAdminModal .btn-secondary {
+    background-color: #f1f1f1;
+    color: #333;
+    margin-right: 10px;
+}
+#editAdminModal .btn-secondary:hover {
+    background-color: #ddd;
+}
+
+#editAdminModal button[type="submit"] {
+    background-color: #2c3e50;
+    color: #fff;
+}
+#editAdminModal button[type="submit"]:hover {
+    background-color: #1e2b38;
+}
