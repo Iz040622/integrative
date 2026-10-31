@@ -1,74 +1,97 @@
-# Mexue Beverage Online Ordering System (Java OOP) 🧋☕
+# Hotel Stripes Kuala Lumpur — Enterprise Web & Admin System 🏨🛎️
 
-[![Language](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.oracle.com/java/)
-[![Paradigm](https://img.shields.io/badge/Paradigm-Object--Oriented%20Programming-blue.svg)]()
-[![Interface](https://img.shields.io/badge/Interface-ANSI%20CLI%20Terminal-lightgrey.svg)]()
+[![Framework](https://img.shields.io/badge/Framework-Laravel%2010+-red.svg)](https://laravel.com/)
+[![Language](https://img.shields.io/badge/Language-PHP%208.2+-blue.svg)](https://www.php.net/)
+[![Design Pattern](https://img.shields.io/badge/Pattern-Template%20Method-yellowgreen.svg)]()
+[![API](https://img.shields.io/badge/Architecture-RESTful%20JSON%20Services-green.svg)]()
 
-A comprehensive Java console-based online shopping cart and beverage ordering platform designed for the Mexue franchise. The system models a production-grade retail purchasing pipeline, supporting custom item preparation, dynamic stock tracking, tiered cart operations, multi-channel payment processing, and receipt generation.
+A centralized hotel reservation, inventory, and administrative management platform engineered for Hotel Stripes Kuala Lumpur. 
 
----
-
-## ☕ Core OOP Principles Implemented
-
-* **Inheritance:** Hierarchical user model rooted at an abstract `User` base class, extended by `Customer`, `Admin`, and `Manager` child classes to share core authentication properties while isolating specialized behaviors.
-* **Polymorphism:**
-  * **Polymorphic Arrays:** Manages system users and multi-option payment strategies (`Payment` extended into `OnlineBanking`, `CreditDebitCard`, `TngEwallet`, and `CashOnDelivery`).
-  * **Method Overriding:** Subclasses override payment calculation routines (e.g., credit card surcharge adjustments) and purchase summary displays.
-* **Encapsulation:** Enforces data hiding via `private` access modifiers across entity attributes, accessed through calibrated getters, setters, and descriptive `toString()` methods.
-* **Abstraction & Interfaces:** Implements `Cloneable` on order item entities to enable safe deep cloning during shopping cart operations without mutating catalogue references.
+The system transitions the hotel from third-party booking dependency to a sovereign web architecture, providing real-time room availability tracking, multi-room bookings, seasonal promo code discount systems, and an administrative reporting dashboard.
 
 ---
 
-## 👤 My Subsystem Contributions: Menu Management Subsystem
+## 🏗️ Architectural Pattern: Template Method Pattern
 
-I designed and engineered the **Menu Management Subsystem**, which acts as the customer-facing inventory showcase and ordering driver:
-
-* **Categorized Catalogue Browsing:** Organizes beverage categories (Coffee, Milk Tea, Fruit Tea, Chocolate) with real-time stock-out indicators (highlighted in red).
-* **Keyword Search Engine:** Allows users to query the menu using sub-string matching, returning real-time filtered results.
-* **Custom Beverage Customization:** Prompts users to define customized preparation attributes (Hot/Cold serving types, calibrated sugar levels: 0%, 25%, 50%, 75%, 100%) and quantities before committing items to the cart.
-* **CLI Terminal Polish:** Implemented custom ANSI escape sequences for clean screen clears, aligned ASCII banner art, and status transition delays.
-
----
-
-## 💻 Sample Terminal Interface
+The Administrative Subsystem relies on the **Template Method Pattern** (`CrudTemplate`) to establish an extensible, standardized lifecycle for recurring data persistence operations across Room Types, Physical Rooms, and Promotional Discount Codes.
 
 ```
-============================================================
-                         M E N U
-============================================================
- [a] What's New | [b] Coffee | [c] Milk Tea | [d] Fruit Tea
-------------------------------------------------------------
- No.  Item Name                     Price (RM)   Status
- 1.   Peach Oolong Tea              RM 7.99      AVAILABLE
- 2.   Americano                     RM 6.99      OUT OF STOCK
- 3.   Brown Sugar Pearl Milk Tea    RM 8.99      AVAILABLE
-------------------------------------------------------------
- Options: [1] Choose Item | [2] View Details | [3] Search | [4] Cart
-============================================================
+                  ┌──────────────────────────────┐
+                  │       CrudTemplate (Base)    │
+                  ├──────────────────────────────┤
+                  │ + process(data): Model       │
+                  │ + processUpdate(data, id)    │
+                  │ # validate(data): void       │
+                  │ # save(data): Model          │
+                  │ # validateUpdate(data, id)   │
+                  │ # saveUpdate(data, id): Model│
+                  └──────────────┬───────────────┘
+                                 ▲
+        ┌────────────────────────┼────────────────────────┐
+        │                        │                        │
+┌───────┴──────────┐   ┌─────────┴──────────┐   ┌─────────┴──────────┐
+│     CrudRoom     │   │   CrudRoomType     │   │   CrudPromoCode    │
+└──────────────────┘   └────────────────────┘   └────────────────────┘
 ```
+
+* **Eliminates Code Duplication:** Concentrates generic execution flow in the base class while allowing subclasses to define entity-specific validation constraints and persistence steps.
+* **Separation of Concerns:** Controllers remain thin by delegating complex business rules away from HTTP handling.
 
 ---
 
-## 🚀 How to Run
+## 🛡️ Enterprise Security Implementations
 
+* **Role-Based Access Control (RBAC):** Tiered route protection using dedicated middleware layers (`AdminMiddleware`, `SuperAdminMiddleware`) to prevent Insecure Direct Object References (IDOR).
+* **File Upload Hardening:** Protects against malicious image execution via MIME type content verification (`image/jpeg`, `image/png`), extension whitelisting, and automated file pruning upon record updates via Laravel `Storage`.
+
+---
+
+## 🌐 Inter-Module Web Services (RESTful APIs)
+
+The Admin Module exposes and consumes high-reliability RESTful JSON endpoints to coordinate data with Guest Booking and Payment subsystems:
+
+| Endpoint | Method | Source $\rightarrow$ Target | Purpose |
+| :--- | :--- | :--- | :--- |
+| `/api/roomTypesToBook` | `POST` | Admin $\rightarrow$ Booking | Resolves room availability by date range, pax count, and active booking locks. |
+| `/api/room/availableRoom` | `POST` | Admin $\rightarrow$ Booking | Fetches the next available physical room ID for cart checkout. |
+| `/api/promo/{code}` | `GET` | Admin $\rightarrow$ Payment | Validates date ranges and discount parameters for promo code applications. |
+| `/api/bookings` | `GET` | Booking $\rightarrow$ Admin | Ingests finalized booking records for administrative sales reporting. |
+
+---
+
+## 🚀 Setup & Installation
+
+### Prerequisites
+* PHP >= 8.2 with OpenSSL, PDO, Mbstring extensions
+* Composer
+* MySQL 8.0+
+
+### Installation Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Iz040622/Mexue-Beverage-Ordering-System.git
-   cd Mexue-Beverage-Ordering-System
+   git clone https://github.com/Iz040622/Hotel-Booking-System.git
+   cd Hotel-Booking-System
    ```
-2. Compile all source files:
+2. Install dependencies:
    ```bash
-   javac -d bin src/*.java
+   composer install
+   npm install && npm run build
    ```
-3. Run the application:
+3. Configure your environment:
    ```bash
-   java -cp bin Main
+   cp .env.example .env
+   php artisan key:generate
+   ```
+4. Configure database credentials in `.env` and run migrations:
+   ```bash
+   php artisan migrate --seed
+   ```
+5. Serve the application:
+   ```bash
+   php artisan serve
    ```
 
 ---
 
-## 👨‍💻 Project Team
-* **Isaac Lim Tian Le** — *Menu Management Subsystem, Search Module, CLI Formatting*
-* **Chin Jia Jun** — *Customer Management Subsystem, Dynamic Array Architecture*
-* **Lau Aik Hung** — *Shopping Cart Subsystem, Staff Management*
-* **Keshandra A/L Jayaselan** — *Order & Checkout Subsystem, File I/O*
+## 👨‍💻 Module Author
+* **Isaac Lim Tian Le** — *Lead Developer: Admin Dashboard, Room & Promo Inventory Subsystems, Template Method Architecture, and RESTful APIs.*
